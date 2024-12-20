@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.home {
+    background: black;
+    padding: 4rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: right;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 639px) {
+    .home {
+      padding: 1rem 0;
+    }
+
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-poster {
+    display: flex;
+    padding: 10px 10px;
+    position: relative;
+    width: 100%;
+    border: 4px solid black;
+    border-top: 10%;
+    border-radius: 10px;
+    background: #FFEFBA; 
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); 
+    transition: all 0.5s ease-in;
+}
+
+.movie-poster img {
+    width: 100%;
+    justify-content: center;
+    aspect-ratio: 2;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.5s ease-in;
+}
+
+.movie-poster img:hover {
+    transform: scale(1.1);
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between; /* Push the text and delete icon apart */
+    align-items: center; /* Center items vertically */
+    padding: 1rem;
+    flex-direction: row; /* Align children in a row */
+    gap: 0.5rem;
+}
+
+.movie-info h3 {
+    color:  #FFEFBA;
+    font-size: 1rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.movie-info p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.user-rating {
+    color: #ffd700;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .movie-card {
+        font-size: 0.9rem;
+    }
+
+    .movie-info {
+        padding: 0.75rem;
+    }
+
+    .favorite-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+}
+
+.add {
+    position: absolute;
+    left: 94%;
+    top: 9.8%;
+    scale: 1.05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 30px;
+    width: 50px;
+    border: 1px solid;
+    outline: none;
+    border-radius: 7px;
+    border-color: #FFEFBA; 
+    color: #FFEFBA;
+}
+
+.add:hover {
+    cursor: pointer;
+    background: #FFEFBA; 
+    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    color: black; 
+}
+
+.btn {
+    display: flex;
+    font-size: 1.5em;
+    transition: 0.3s;
+    position: relative;
+    bottom: 5%;
+}
+
+.btn.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    color: #FFEFBA;
+    position: relative;
+    left: 5%;
+}
+
+.btn.active:hover {
+    color: black;
+}
+
+@keyframes motion {
+    from {
+        transform: translateX(1000px);
+    } to {
+        transform: translateX(0px);
+    }
+}
+
+.search {
+    display: none;
+    transition: all 0.3s ease-in-out;
+    padding: 15px;
+    background-color: black;
+    color: #FFEFBA;
+}
+
+.search:focus {
+    background-color: #FFEFBA;
+    color: black;
+}
+
+.search.active {
+    display: flex;
+    position: absolute;
+    left: 67.7%;
+    top: 9.8%;
+    height: 1.8rem;
+    border: 1px solid #FFEFBA;
+    border-radius: 7px;
+    transition: all 1s ease-in-out;
+
+    animation-name: motion;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.search2 {
+    display: none;
+    transition: all 1s ease-in-out;
+    padding: 15px;
+    background-color: black;
+    color: #FFEFBA;
+}
+
+.search2:focus {
+    background-color: #FFEFBA;
+    color: black;
+}
+
+.search2.active {
+    display: flex;
+    position: absolute;
+    left: 77%;
+    top: 9.8%;
+    height: 1.8rem;
+    border: 1px solid #FFEFBA;;
+    border-radius: 7px;
+    transition: all 1s ease-in-out;
+
+    animation-name: motion;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.add-brand {
+    display: none;
+    padding: 15px;
+}
+
+.add-brand.active {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 87%;
+    top: 9.8%;
+    height: 1.8rem;
+    border-radius: 7px;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    outline: none;
+    border-color: #FFEFBA;
+
+    animation-name: motion;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.add-brand.active p {
+    color: #FFEFBA;
+    z-index: 10;
+}
+
+.add-brand.active:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FFEFBA; 
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); 
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.add-brand.active:hover {
+    cursor: pointer;
+    border: 2px solid;
+    outline: none;
+    top: 9.7%;
+    padding: 15px;
+}
+
+.add-brand.active:hover:after {
+    width: 100%;
+}
+
+.add-brand.active:hover p {
+    color: black;
+}
+
+.delete {
+    width: 30px; /* Set a smaller size for the icon */
+    height: 30px;
+    background: url('Trash_closed.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete:hover {
+    background: url('Trash_open.png') no-repeat center center;
+    background-size: contain;
+}
+
+.delete-cars {
+    width: 30px; /* Set a smaller size for the icon */
+    height: 30px;
+    background: url('Trash_closed.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 12;
+}
+
+.delete-cars:hover {
+    background: url('Trash_open.png') no-repeat center center;
+    background-size: contain;
+}

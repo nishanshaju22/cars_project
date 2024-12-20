@@ -1,0 +1,101 @@
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    z-index: 2;
+    transition: right 0.5s ease;
+}
+
+.showcase header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('menu.png') no-repeat center center;
+    background-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 14;
+}
+
+.toggle.active {
+    background: url('close.png') no-repeat center center;
+    background-size: 30px;
+    z-index: 14;
+}
+
+.menu {
+    position: fixed; /* Ensure the menu stays in place */
+    top: 0;
+    left: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 80%;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 1s ease;
+    z-index: 13;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu ul {
+    display: grid;
+    position: relative;
+    bottom: 21%;
+    list-style: none;
+}
+
+.menu ul li {
+    margin: 35px 0;
+}
+
+.menu ul li a {
+    opacity: 100%;
+    text-decoration: none;
+    font-size: 20px;
+    color: #111;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #4DB69F;
+}

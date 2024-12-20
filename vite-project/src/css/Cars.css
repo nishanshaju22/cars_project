@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.brand-overlay::before {
+    content: "";
+    position: fixed; /* Fixed to cover entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4DB69F; /* Use the desired hex color */
+    z-index: 14; /* Behind the logo but above other content */
+
+    animation-name: backgroud-motion;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes backgroud-motion {
+    0% {
+        opacity: 100%;
+    } 70% {
+        opacity: 100%;
+    } 99% {
+        z-index: 14;
+    } 100% {
+        opacity: 0%;
+        z-index: 12;
+    }
+}
+
+.brand-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width from edge to edge */
+    height: 100px; /* Adjust the height to your preference */
+    background: linear-gradient(to right, rgb(203, 192, 192), rgb(182, 171, 171)); /* Background gradient */
+    opacity: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.brand-logo {
+    display: flex;
+    margin: auto;
+    left: auto;
+    right: auto;
+    position: absolute;
+    right: 50%;
+    top: 45%;
+    scale: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 50px;
+    opacity: 100%;
+    z-index: 30;
+
+    animation-name: logo;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+
+}
+
+@keyframes logo {
+    0% {
+        opacity: 0%;
+        transform: scale(2);
+        position: absolute;
+        top: 35%
+    } 25% {
+        opacity: 0%;
+        transform: scale(2);
+        position: absolute;
+        top: 35%
+    } 55% {
+        opacity: 0%;
+        transform: scale(2);
+        position: absolute;
+        top: 35%
+    } 70% {
+        opacity: 60%;
+        transform: scale(2);
+        position: absolute;
+        top: 35%
+    } 100% {
+        opacity: 100%;
+        transform: scale(1.5);
+        display: flex;
+        margin: auto;
+        top: 3.4%;
+        left: 50%;
+    }
+}
+
+.brand-name {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    display: flex;
+    right: 44.5%;
+    position: relative;
+    top: 40%; 
+    scale: 0.4;
+    text-decoration: none;
+    color: #FFFFFF;
+    z-index: 30;
+    letter-spacing: 20px;
+
+    animation-name: name;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+}
+
+@keyframes name {
+    0% {
+        opacity: 0%;
+        transform: scale(2);
+        position: absolute;
+        top: 42%
+    } 25% {
+        opacity: 45%;
+        transform: scale(2);
+        position: absolute;
+        top: 42%
+    } 45% {
+        opacity: 100%;
+        transform: scale(2);
+        position: absolute;
+        letter-spacing: 0px;
+        top: 42%
+    } 70% {
+        opacity: 75%;
+        transform: scale(2);
+        position: absolute;
+        letter-spacing: 0px;
+        top: 42%
+    } 100% {
+        transform: scale(1.5);
+        position: absolute;
+        top: 11%;
+        opacity: 0%;
+        letter-spacing: 0px;
+        display: none;
+    }
+}
+
+.brands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 100px;
+}
+
+.empty {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: #FFEFBA;
+}
+
+@media (max-width: 890px) {
+    .brand-logo {
+        left: 50%; /* Center it for smaller screens */
+        top: 5%; /* Adjust top spacing */
+        scale: 3; /* Reduce scale for better fit */
+        height: 20px;
+        width: 40px;
+    }
+
+    .brand-name {
+        top: 5%;
+        right: 45%; /* Center text alignment */
+        scale: 1.5; /* Reduce scale */
+        font-size: 1.2rem; /* Adjust font size */
+        text-align: center;
+    }
+
+    .car-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust card size */
+        gap: 1rem; /* Reduce gap */
+        padding-top: 80px; /* Adjust spacing */
+    }
+
+    .empty {
+        font-size: 1rem; /* Adjust font size for empty state */
+        text-align: center;
+        width: 100%; /* Ensure it spans full width */
+        padding: 1rem; /* Add padding */
+    }
+}
+
+.add-cars {
+    position: absolute;
+    left: 94%;
+    top: 11%;
+    scale: 1.05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 30px;
+    width: 50px;
+    border: 1px solid;
+    outline: none;
+    border-radius: 7px;
+    border-color: #FFEFBA; 
+    color: #FFEFBA;
+    z-index: 12;
+}
+
+
+.add-cars:hover {
+    cursor: pointer;
+    background: #FFEFBA; 
+    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    color: black; 
+}
+
+.btn-cars {
+    display: flex;
+    font-size: 1.5em;
+    transition: 0.3s;
+    position: relative;
+    bottom: 5%;
+}
+
+.btn-cars.active {
+    transform: rotate(45deg);
+    color: #FFEFBA;
+    position: relative;
+    left: 5%;
+}
+
+.btn-cars.active:hover {
+    color: black;
+}
+
+.add-values {
+    display: none;
+}
+
+.add-values.active {
+    position: absolute;
+    top: 12%;
+    right: 37.5%;
+    width: 500px;
+    height: 400px;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526); 
+    background: linear-gradient(to right, #414345, #232526);
+    border-radius: 7px;
+    opacity: 70%;
+    display: flex;
+    z-index: 12;
+}
+
+.add-model {
+    display: none;
+}
+
+.add-model.active {
+    display: flex;
+    position: absolute;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #FFEFBA;
+    background: #FFEFBA;
+    color: black;
+    border-radius: 7px;
+    top: 15%;
+    right: 43%;
+    z-index: 12;
+    transition: all 0.5s ease;
+}
+
+.add-model::placeholder {
+    color: black;
+}
+
+.add-model:focus {
+    border: 2px solid black;
+}
+
+.add-year {
+    display: none;
+}
+
+.add-year.active {
+    display: flex;
+    position: absolute;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #FFEFBA;
+    background: #FFEFBA;
+    color: black;
+    border-radius: 7px;
+    top: 25%;
+    right: 43%;
+    z-index: 12;
+    transition: all 0.5s ease;
+}
+
+.add-year::placeholder {
+    color: black;
+}
+
+.add-year:focus {
+    border: 2px solid black;
+}
+
+.add-image {
+    display: none;
+}
+
+.add-image.active {
+    display: flex;
+    position: absolute;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #FFEFBA;
+    background: #FFEFBA;
+    color: black;
+    border-radius: 7px;
+    top: 35%;
+    right: 43%;
+    z-index: 12;
+    transition: all 0.5s ease;
+}
+
+.add-image::placeholder {
+    color: black;
+}
+
+.add-image:focus {
+    border: 2px solid black;
+}
+
+.add-car {
+    display: none;
+}
+
+.add-car.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    width: 500px;
+    height: 60px;
+    right: 37.5%;
+    padding: 15px;
+    border: none;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    z-index: 12;
+    background: #FFEFBA; 
+    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+
+}
+
+.add-car p {
+    font-size: 2em;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526); 
+    background: linear-gradient(to right, #414345, #232526);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.add-car:active {
+    transform: scale(2em);
+}
